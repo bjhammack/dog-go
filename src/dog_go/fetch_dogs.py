@@ -64,8 +64,8 @@ def generate_url(
     url_prefix = 'https://www.petfinder.com/search/dogs-for-adoption/us/'
     url_location = 'il/60515/?'
     url_distance = f'distance={distance}'
-    url_age = '&'.join([f'age%5B0%5D={age}' for age in ages])
-    url_size = '&'.join([f'size%5B0%5D={size}' for size in sizes])
+    url_age = '&'.join([f'age%5B{i}%5D={age}' for i, age in enumerate(ages)])
+    url_size = '&'.join([f'size%5B{i}%5D={size}' for i, size in enumerate(sizes)])
     url_house_trained = 'attribute%5B0%5D=House+trained' if house_trained else ''
     url_good_with_dogs = 'household%5B0%5D=good_with_dogs' if good_with_dogs else ''
     url_page_num = f'page={page_num}'    
