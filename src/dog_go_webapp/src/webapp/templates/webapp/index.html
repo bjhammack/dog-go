@@ -1,0 +1,24 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+    {% if dogs %}
+    {% include 'webapp/filter.html' %}
+    <div class="row mx-2">
+        {% for dog in dogs %}
+        <div class="col-12 col-sm-6 col-md-4 px-2 mb-3">
+            <div class="card">
+                <img src="{{dog.img}}" class="img-fluid" style="padding: 30px" alt="{{dog.name}}"/>
+                <div class="card-body">
+                    <h5 class="card-title">{{dog.name}}</h5>
+                    <p class="card-text">
+			{{dog.details}}
+                    </p>
+                    <a href="{{dog.link}}" class="btn btn-primary">Visit Dog</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No dogs available.</p>
+    {% endif %}
+{% endblock content %}

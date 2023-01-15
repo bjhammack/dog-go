@@ -39,16 +39,19 @@ def get_dog_cards(
 
 
 def clean_dog_cards(cards:list):
-    dog_df_dict = {'name':[], 'details':[], 'link':[]}
+    dog_df_dict = {'name':[], 'details':[], 'link':[], 'img':[]}
     for card in cards:
         label = card.get_attribute('aria-label').split(', ')
         name = label[0]
         details = label[2]
         link = card.get_attribute('href')
+        img = card.find_element(by=By.CLASS_NAME, value='petCard-media')
+        img_src = img.get_attribute('src')
         
         dog_df_dict['name'].append(name)
         dog_df_dict['details'].append(details)
         dog_df_dict['link'].append(link)
+        dog_df_dict['img'].append(img_src)
 
     return dog_df_dict
 

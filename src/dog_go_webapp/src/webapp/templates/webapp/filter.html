@@ -1,0 +1,46 @@
+<form action="{% url 'webapp:update' %}" method="post">
+<div>
+	<div id='distance-div'>
+		<input type="range" min="25" max="100" value="50" step='25' class="slider" id="distance">
+	</div>
+	<div id='age-div'>
+		<label class="container">Puppy
+  			<input type="checkbox" id='puppy-check' value="Puppy" checked="checked">
+  			<span class="checkmark"></span>
+		</label>
+		<label class="container">Young
+  			<input type="checkbox" id='young-check' value='Young' checked="checked">
+  			<span class="checkmark"></span>
+		</label>
+		<label class="container">Adult
+  			<input type="checkbox" id='adult-check' value='Adult'>
+  			<span class="checkmark"></span>
+		</label>	
+	</div>
+	<div id='size-div'>
+		<label class="container">Medium
+  			<input type="checkbox" id='med-check' value="Medium" checked="checked">
+  			<span class="checkmark"></span>
+		</label>
+		<label class="container">Large
+  			<input type="checkbox" id='large-check' value='Large' checked="checked">
+  			<span class="checkmark"></span>
+		</label>		
+	</div>
+	<div id='house-trained-div'>
+		<label class="container">House trained.
+  			<input type="checkbox" id='ht-check' value='True' checked="checked">
+  			<span class="checkmark"></span>
+		</label>		
+	</div>
+	<div id='good-with-dogs-div'>
+		<label class="container">Good with dogs.
+  			<input type="checkbox" id='gwd-check' value='True' checked="checked">
+  			<span class="checkmark"></span>
+		</label>		
+	</div>
+	<div id='update-div'>
+		<button class='btn btn-primary'>Update</button>
+	</div>
+</div>
+</form>
