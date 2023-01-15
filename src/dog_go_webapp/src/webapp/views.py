@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect
 import pandas as pd
 
 
-@login_required
 def index(request):
     dogs = pd.read_csv('data/old_dogs.csv').to_dict('records')
     context = {
@@ -15,7 +14,6 @@ def index(request):
     return render(request, 'webapp/index.html', context)
 
 
-@login_required
 def profile(request):
     user = request.user
     auth0user = user.social_auth.get(provider='auth0')
